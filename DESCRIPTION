@@ -1,0 +1,12 @@
+Type: Package
+Package: queue
+Title: Queue
+Version: 0.0.1
+Authors@R: c(
+    person("Kim", "Seonghyun", , "zedoul@gmail.com", c("aut", "cre", "cph"))
+    )
+Description: Provides a mechanism for queue.
+License: MIT + file LICENSE
+VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.0
