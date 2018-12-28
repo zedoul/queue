@@ -26,9 +26,8 @@ length.queue <- function(.q) {
 #' Note that it does not need to return queue obj since the environemnt is
 #' stored like global variable
 #'
-#' @method push queue
 #' @export
-push.queue <- function(.q, v){
+push <- function(.q, v){
   if (is.null(v)) {
     stop("queue item to push is NULL")
   }
@@ -42,9 +41,8 @@ push.queue <- function(.q, v){
 
 #' Pop item from queue
 #'
-#' @method pop queue
 #' @export
-pop.queue <- function(.q) {
+pop <- function(.q) {
   e <- base::get("q", envir = .q)
   v <- e[[length(e)]]
   if(length(e) == 1) {
@@ -54,6 +52,20 @@ pop.queue <- function(.q) {
   }
 
   v
+}
+
+#' @importFrom cli cat_rule
+rule <- function(...) cli::cat_rule(..., col = "green")
+
+rng <- function(from, to) {
+  from <- as.integer(from)
+  to <- as.integer(to)
+
+  if (from > to) {
+    NULL
+  } else {
+    seq(from, to)
+  }
 }
 
 #' @export
@@ -67,15 +79,5 @@ print.queue <- function(.q){
   }
 
   invisible()
-}
-
-#' @export
-push <- function(.q, v) {
-  UseMethod("push")
-}
-
-#' @export
-pop <- function(.q) {
-  UseMethod("pop")
 }
 
