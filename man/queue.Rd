@@ -2,7 +2,7 @@
 % Please edit documentation in R/queue.R
 \name{queue}
 \alias{queue}
-\title{Queue}
+\title{Create queue}
 \usage{
 queue(name = "base", class = NULL)
 }
@@ -10,7 +10,7 @@ queue(name = "base", class = NULL)
 \item{name}{name of queue to be assigned}
 }
 \description{
-empty
+Create queue
 }
 \examples{
 

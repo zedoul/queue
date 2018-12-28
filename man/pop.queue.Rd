@@ -2,10 +2,10 @@
 % Please edit documentation in R/queue.R
 \name{pop.queue}
 \alias{pop.queue}
-\title{Pop queue}
+\title{Pop item from queue}
 \usage{
 \method{pop}{queue}(.q)
 }
 \description{
-Pop queue
+Pop item from queue
 }

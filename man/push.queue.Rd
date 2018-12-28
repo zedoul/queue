@@ -2,7 +2,7 @@
 % Please edit documentation in R/queue.R
 \name{push.queue}
 \alias{push.queue}
-\title{Push queue}
+\title{Push item into queue}
 \usage{
 \method{push}{queue}(.q, v)
 }

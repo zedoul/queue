@@ -1,6 +1,4 @@
-#' Queue
-#'
-#' empty
+#' Create queue
 #'
 #' @param name name of queue to be assigned
 #' @export
@@ -15,12 +13,7 @@ queue <- function(name = "base", class = NULL) {
   structure(.q, class = c(class, "queue"))
 }
 
-#' @export
-name.queue <- function(.q) {
-  base::get("name", envir = .q)
-}
-
-#' Size of queue
+#' Get size of queue
 #'
 #' @export
 length.queue <- function(.q) {
@@ -28,7 +21,7 @@ length.queue <- function(.q) {
   length(e)
 }
 
-#' Push queue
+#' Push item into queue
 #'
 #' Note that it does not need to return queue obj since the environemnt is
 #' stored like global variable
@@ -47,7 +40,7 @@ push.queue <- function(.q, v){
   invisible()
 }
 
-#' Pop queue
+#' Pop item from queue
 #'
 #' @method pop queue
 #' @export
@@ -65,7 +58,8 @@ pop.queue <- function(.q) {
 
 #' @export
 print.queue <- function(.q){
-  rule(paste('queue:', name(.q)))
+  rule(paste('queue:',
+             base::get("name", envir = .q)))
   .list <- base::get("q", envir = .q)
 
   for (i in rng(1, length(.list))) {

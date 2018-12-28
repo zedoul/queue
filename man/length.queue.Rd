@@ -2,10 +2,10 @@
 % Please edit documentation in R/queue.R
 \name{length.queue}
 \alias{length.queue}
-\title{Size of queue}
+\title{Get size of queue}
 \usage{
 \method{length}{queue}(.q)
 }
 \description{
-Size of queue
+Get size of queue
 }
