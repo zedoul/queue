@@ -69,13 +69,18 @@ rng <- function(from, to) {
 }
 
 #' @export
+items <- function(.q) {
+  base::get("q", envir = .q)
+}
+
+#' @export
 print.queue <- function(.q){
   rule(paste('queue:',
              base::get("name", envir = .q)))
-  .list <- base::get("q", envir = .q)
+  .items <- items(.q)
 
-  for (i in rng(1, length(.list))) {
-    cat(paste0(i, ":"), as.character(.list[[i]]), "\n")
+  for (i in rng(1, length(.items))) {
+    cat(paste0(i, ":"), as.character(.items[[i]]), "\n")
   }
 
   invisible()

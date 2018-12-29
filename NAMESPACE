@@ -2,6 +2,7 @@
 
 S3method(length,queue)
 S3method(print,queue)
+export(items)
 export(pop)
 export(push)
 export(queue)
